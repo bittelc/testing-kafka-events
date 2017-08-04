@@ -33,7 +33,8 @@ Commit logs are ordered based on offset, where each new message N+1 the offset o
 3. Start Kafka server(s)
     * `kafka-server-start.sh config/server.properties`
 4.Create first topic
-    * `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partition 1 --topic xbanku-transactions-t1`
+    * `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic xbanku-transactions-t1`
+5. 
 
 
 
