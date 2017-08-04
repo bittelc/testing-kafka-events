@@ -34,7 +34,12 @@ Commit logs are ordered based on offset, where each new message N+1 the offset o
     * `kafka-server-start.sh config/server.properties`
 4.Create first topic
     * `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic xbanku-transactions-t1`
-5. 
-
-
-
+5. Init repo
+    * Install Govendor for package management and `govendor init`
+    * govendor add +external
+    * Install ginkgo for TDD and Gomeda
+        * `go get github.com/onsi/ginkgo/ginkgo`
+        * `go get github.com/onsi/gomega`
+        * `ginkgo bootstrap`
+6. Run test suite
+    * `ginkgo`

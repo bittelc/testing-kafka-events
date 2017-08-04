@@ -183,6 +183,12 @@
 			"revisionTime": "2017-07-16T19:34:46Z"
 		},
 		{
+			"checksumSHA1": "zmC8/3V4ls53DJlNTKDZwPSC/dA=",
+			"path": "github.com/satori/go.uuid",
+			"revision": "5bf94b69c6b68ee1b541973bb8e1144db23a194b",
+			"revisionTime": "2017-03-21T23:07:31Z"
+		},
+		{
 			"checksumSHA1": "vqc3a+oTUGX8PmD0TS+qQ7gmN8I=",
 			"path": "golang.org/x/net/html",
 			"revision": "f5079bd7f6f74e23c4d65efa0f4ce14cbd6a3c0f",
@@ -297,5 +303,5 @@
 			"revisionTime": "2017-02-08T14:18:51Z"
 		}
 	],
-	"rootPath": "github.com/testing-kafka-events"
+	"rootPath": "github.com/bittelc/kafkaevents"
 }
