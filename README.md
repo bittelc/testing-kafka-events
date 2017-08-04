@@ -25,4 +25,8 @@ Row:Table :: Commit Log:Topic
 
 Commit logs are ordered based on offset, where each new message N+1 the offset of the last commit.
 
+## Up and Running
 
+1. Download and install Kafka. If necessary, also download ZooKeeper independently
+2. Start Zookeeper server(s)
+    * `zookeeper-server-start.sh config/zookeeper.properties`
