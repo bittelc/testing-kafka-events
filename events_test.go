@@ -1,7 +1,7 @@
 package main_test
 
 import (
-	. "testing-kafka-events"
+	. "github.com/bittelc/kafkaevents"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
