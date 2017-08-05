@@ -29,11 +29,11 @@ Commit logs are ordered based on offset, where each new message N+1 the offset o
 
 1. Download and install Kafka. If necessary, also download ZooKeeper independently
 2. Start Zookeeper server(s)
-    * `zookeeper-server-start.sh config/zookeeper.properties`
+    * `<path to ZK>/zookeeper-server-start.sh config/zookeeper.properties`
 3. Start Kafka server(s)
-    * `kafka-server-start.sh config/server.properties`
-4.Create first topic
-    * `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic xbanku-transactions-t1`
+    * `<path to kafka>/kafka-server-start.sh config/server.properties`
+4. Create first topic
+    * `kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic xbanku-transactions-t2`
 5. Init repo
     * Install Govendor for package management and `govendor init`
     * govendor add +external
@@ -44,3 +44,9 @@ Commit logs are ordered based on offset, where each new message N+1 the offset o
 6. Run test suite
     * `ginkgo`
 7. If you have an external Redis URL, set environment variable `REDIS_URL`
+8. go build && ./kafkaevents
+    * Now able to use the producer to produce messages to kafka
+
+     `create###Cole Bittel`
+     Message: {Event:{AccId:0ef305f1-cb00-47db-a0cc-547f1127d00c Type:CreateEvent} AccName:Cole Bittel}
+     Message is stored in partition 0, offset 0
