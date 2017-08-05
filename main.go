@@ -25,4 +25,5 @@ func initRedis() *redis.Client {
 }
 
 func main() {
+	mainProducer()
 }

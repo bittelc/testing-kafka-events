@@ -9,8 +9,8 @@ import (
 )
 
 var (
-	brokers = []string{"127.0.0.1:9092"}
-	topic   = "banku-transactions"
+	brokers = []string{"127.0.0.1:9093"}
+	topic   = "xbanku-transactions-t1"
 	topics  = []string{topic}
 )
 
