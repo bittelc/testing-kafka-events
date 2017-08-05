@@ -36,6 +36,16 @@ func newKafkaSyncProducer() sarama.SyncProducer {
 	return kafka
 }
 
+func newKafkaConsumer() sarama.Consumer {
+	consumer, err := sarama.NewConsumer(brokers, newKafkaConfiguration())
+
+	if err != nil {
+		fmt.Printf("Kafka error: %s\n", err)
+		os.Exit(-1)
+	}
+	return consumer
+}
+
 // sendMsg sends a message to the Kafka cluster
 func sendMsg(kafka sarama.SyncProducer, event interface{}) error {
 	json, err := json.Marshal(event)
