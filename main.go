@@ -1,13 +1,17 @@
 package main
 
-import "github.com/go-redis/redis"
+import (
+	"os"
+
+	"github.com/go-redis/redis"
+)
 
 var (
 	Redis = initRedis()
 )
 
 func initRedis() *redis.Client {
-	redisUrl := os.Getend("REDIS_URL")
+	redisUrl := os.Getenv("REDIS_URL")
 
 	if redisUrl == "" {
 		redisUrl = "127.0.0.1:6379"

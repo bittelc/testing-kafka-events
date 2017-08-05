@@ -45,7 +45,7 @@ func sendMsg(kafka sarama.SyncProducer, event interface{}) error {
 
 	msgLog := &sarama.ProducerMessage{
 		Topic: topic,
-		Value: sarama.STringEncoder(string(json)),
+		Value: sarama.StringEncoder(string(json)),
 	}
 
 	partition, offset, err := kafka.SendMessage(msgLog)

@@ -11,7 +11,7 @@ import (
 // archetypal config defined in kafka.go
 func mainProducer() {
 	var err error
-	read := bufio.NewReader(os.Stdin)
+	reader := bufio.NewReader(os.Stdin)
 	kafka := newKafkaSyncProducer()
 	for {
 		fmt.Print("->")
