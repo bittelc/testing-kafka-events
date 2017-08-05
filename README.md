@@ -43,3 +43,4 @@ Commit logs are ordered based on offset, where each new message N+1 the offset o
         * `ginkgo bootstrap`
 6. Run test suite
     * `ginkgo`
+7. If you have an external Redis URL, set environment variable `REDIS_URL`
