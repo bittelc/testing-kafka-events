@@ -38,7 +38,7 @@ func (e WithdrawEvent) Process() (*BankAccount, error) {
 
 func (e TransferEvent) Process() (*BankAccount, error) {
 	if acc, err := FetchAccount(e.AccId); err != nil {
-		return nil, er
+		return nil, err
 	} else {
 		if destAcc, err := FetchAccount(e.TargetId); err != nil {
 			return nil, err
