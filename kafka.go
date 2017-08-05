@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 
@@ -33,4 +34,27 @@ func newKafkaSyncProducer() sarama.SyncProducer {
 		os.Exit(-1)
 	}
 	return kafka
+}
+
+// sendMsg sends a message to the Kafka cluster
+func sendMsg(kafka sarama.SyncProducer, event interface{}) error {
+	json, err := json.Marshal(event)
+	if err != nil {
+		return err
+	}
+
+	msgLog := &sarama.ProducerMessage{
+		Topic: topic,
+		Value: sarama.STringEncoder(string(json)),
+	}
+
+	partition, offset, err := kafka.SendMessage(msgLog)
+	if err != nil {
+		fmt.Printf("Kafka error: %s\n", err)
+	}
+
+	fmt.Printf("Message: %+v\n", event)
+	fmt.Printf("Message is stored in partition %d, offset %d\n", partition, offset)
+
+	return nil
 }
